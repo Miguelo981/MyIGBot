@@ -721,7 +721,7 @@ class MyIGBot:
 
         return json.loads(upload_response.text)
 
-    def upload_post(self, image_path, caption=''):
+    def upload_post(self, image_path: str, caption=''):
         json_data = self.pre_upload_image(image_path)
         upload_id = json_data['upload_id']
 
@@ -818,7 +818,6 @@ class MyIGBot:
             "x-csrftoken": self.csrf_token,
             "x-ig-app-id": "1217981644879628",
             "cookie": self.cookie
-
         }
 
         upload_response = requests.post(f'https://www.instagram.com/rupload_igvideo/fb_uploader_{micro_time}',
